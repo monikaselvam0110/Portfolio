@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #080415;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080415;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #8B5CF6, #FFFFFF);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #FFFFFF, #8B5CF6);
+}
+
+/* Premium Typography Rules */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(19, 13, 34, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(167, 139, 250, 0.08);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(167, 139, 250, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px -12px rgba(139, 92, 246, 0.2),
+              0 0 15px rgba(139, 92, 246, 0.05);
+}
+
+.glass-navbar {
+  background: rgba(8, 4, 21, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Cyber Tech Background Pattern */
+.bg-grid-pattern {
+  background-size: 60px 60px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.008) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.008) 1px, transparent 1px);
+}
+
+/* Subtle Premium Auroras */
+.aurora-primary {
+  background: radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.08) 0%, rgba(167, 139, 250, 0.02) 60%, transparent 100%);
+  filter: blur(80px);
+}
+
+.aurora-secondary {
+  background: radial-gradient(circle at 15% 80%, rgba(167, 139, 250, 0.08) 0%, rgba(139, 92, 246, 0.02) 60%, transparent 100%);
+  filter: blur(80px);
+}
+
+/* Orbit Animations (Double Rotation Technique) */
+@keyframes orbit-cw {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-ccw {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.animate-orbit-inner-parent {
+  animation: orbit-cw 36s linear infinite;
+}
+
+.animate-orbit-inner-child {
+  animation: orbit-ccw 36s linear infinite;
+}
+
+.animate-orbit-outer-parent {
+  animation: orbit-ccw 54s linear infinite;
+}
+
+.animate-orbit-outer-child {
+  animation: orbit-cw 54s linear infinite;
+}
+
+/* Ambient Floating nodes */
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(0.5deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.02);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 5s ease-in-out infinite;
+}
+
+/* Typing Cursor Effect */
+.typing-cursor::after {
+  content: '|';
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Glow-Suppressed Minimalist Text Glows mapping to Purple & White */
+.text-neon-cyan {
+  text-shadow: 0 0 8px rgba(167, 139, 250, 0.35);
+}
+
+.text-neon-purple {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
